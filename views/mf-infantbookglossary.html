@@ -1,0 +1,79 @@
+<div id="glossary-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="beforeShowInfantglossary" data-after-show="afterShowInfantglossary" data-before-hide="beforeHideInfantglossary">
+
+  <header data-role="footer" class="book-main-wrap-header">
+    <div class="row">
+        <div class="col-xs-6">
+            <a data-role="button" data-bind="events: { click: GoToLibrary }"><span class="icon-booklist"></span> <span data-bind="text: GoToHomeLabel"></span></a>
+        </div>
+        <div class="col-xs-6" >
+            <strong data-bind="text: BookTitle"></strong>
+        </div>	        
+    </div>       
+  </header>
+  
+  <div class="row book-content-wrap row-margin-null">
+    <div class="col-xs-12">
+      <div class="detailfull-wrap tab-content-wrap">
+        <div data-bind="html: GlossaryContent">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer data-role="header" class="book-main-wrap-footer">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-glossary-infant"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
+             <a class="bttn-prev bttn-prev-lesson km-widget km-button" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="km-text span-bold" data-bind="text: Back"></span> <span data-bind="text: LastLessonNumber" class="km-lessonnum"></span></a>
+        </div>
+        <div class="col-xs-6">
+
+        </div>	        
+    </div> 
+  </footer>
+<!--<div class="preloader-mf"><div class="preloader-mf-img"></div></div>-->
+<script src="js/infantbookglossary.js"></script>
+</div>
+
+<!--drawer navigation-->
+<div data-role="drawer" id="table-of-contents-glossary-infant" class="bookdetails-drawer table-of-contents" style="width:250px"  data-swipe-to-open="false"  data-show="onShowDrawer" data-views='["views/mf-infantbookglossary.html"]'>
+    <div id="book-title" class="bookdetails-drawer-head">
+      <h1 data-bind="text: Book.Title"></h1>
+    </div>
+    <div data-role="scroller" style="height: 460px" id="scroller">
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
+      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
+      <ul id="list-themes" class="bookdetails-drawer-firstnav" data-bind="source: Themes" data-template="themes-template">
+      </ul>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
+    </div>
+    <a data-click="hideDrawerIG" data-role="button" class="bttn-hidedrawer"></a>       
+</div>
+<!--end drawer navigation-->
+
+<!-- Chapter Nav Template -->
+<script id="themes-template" type="text/x-kendo-template">
+  <li>
+    <a class="km-widget km-button js-subnav-link" data-role="button" data-bind="attr: { title: Title }, events: { click: SlideToggle }" data-transition="none" data-role="button" class="js-subnav-link"> <span data-bind="text: Title"></span><span class="glyphicon glyphicon-triangle-bottom"></span></a>
+    <ul>
+      #= RenderLessonsTemplate(data) #
+    </ul>
+  </li>
+</script>
+
+<!-- Lesson Nav Template -->
+<script id="lessons-template" type="text/x-kendo-template">
+    # $.each(data.Lessons, function (index, lesson) { 
+            # <li>
+              <a class="km-widget km-button" data-bind="events: { click: SelectLesson }" data-transition="none">
+                <input class="js-lessonnumber" type="text" value="${lesson.LessonNumber}" hidden/>
+                <input class="js-chapternumber" type="text" value="${lesson.ThemeNumber}" hidden/>
+                ${lesson.Title}
+              </a>
+            </li> #
+      }); 
+    #
+</script>
+
+
+

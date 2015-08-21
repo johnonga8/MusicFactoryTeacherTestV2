@@ -1,0 +1,7 @@
+-Forgot Password Layout
+-Nav Problem due to touch to swipe:
+	data-show="onShowDrawer"
+	function onShowDrawer(){
+    		var isVisible = $('#table-of-contents').getKendoMobileDrawer().visible;
+   		 closeNav();
+	};

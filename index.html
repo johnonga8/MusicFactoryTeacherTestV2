@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Factory</title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="css/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="css/kendo.bootstrap.min.css" rel="stylesheet"/>
+	  <link href="css/jquery.fancybox.css" rel="stylesheet"/>
+	  <link href="css/flexslider.css" rel="stylesheet"/>
+    <script src="https://content.jwplatform.com/libraries/Lug7a9B5.js"></script>
+    <link href="css/main.css" rel="stylesheet" />
+    
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.linq.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+
+</head>
+<body>
+<!---BOOK COVER START-->
+<div id="lesson-details-infant" class="book-main-wrap" data-role="view" data-layout="drawer-layout" data-before-show="beforeShowInfantthemes" data-after-show="afterShowInfantthemes" data-before-hide="beforeHideInfantthemes" >
+
+  <header data-role="footer" class="book-main-wrap-header">
+    <div class="row">
+        <div class="col-xs-6">
+        </div>
+        <div class="col-xs-6" >
+            <strong><span data-bind="text: Book.Title"></span> - <span data-bind="text: CurrentTheme.Title"></span></strong>
+        </div>	        
+    </div>       
+  </header>
+  
+  <div class="row book-content-wrap js-fullheight row-margin-null js-infanttabs">
+    <div class="col-xs-12">
+    <!--start content-->
+      <div class="row book-content-header">
+        <div class="col-xs-12">
+          <!--<h1>Lesson 1: The Bicycle Bells</h1> -->
+          <h1 data-bind="text: CurrentLesson.Title"></h1>
+        </div>
+        <div class="col-xs-12">
+          <ul class="bookdetails-tabs infant-tabs">
+            <li class="tab-control-01 tab-active" data-tab="infanttab-1"><span data-bind="text: Tab1"></span></li>
+            <li class="tab-control-02" data-tab="infanttab-2"><span data-bind="text: Tab2"></span></li>
+            <li class="tab-control-03" data-tab="infanttab-3"><span data-bind="text: Tab3"></span></li>
+            <li class="tab-control-04" data-tab="infanttab-4"><span data-bind="text: Tab4"></span></li>
+          </ul>
+        </div>
+      </div>
+      <!--Start Overview-->
+      <div id="infanttab-1" class="tab-content-wrap tab-content-01" data-bind="html: CurrentLesson.Section1_Content">
+      </div>
+      <!--End Overview-->
+      
+      <!--Start Activity Procedure-->
+      <div id="infanttab-2" class="row tab-content-wrap tab-content-02">
+        <div class="col-xs-12">  
+          <div class="fancybox bttn-modal" href="#infantwelcomesong"><span data-bind="text: PlayWelcomeSong"></span></div>
+          <hr/>
+          <!--start modal-->
+          <div id="infantwelcomesong" class="modalcontent">
+            <div class="data-modalcontent"  data-bind="html: BookWelcome">
+            </div>
+          </div>
+          <!--end modal-->
+          <div class="detail-wrap" data-bind="html: CurrentLesson.Section2_Content">
+          </div>
+          <hr/>
+          <div class="bttn-modal fancybox" href="#infantgoodbyesong"><span data-bind="text: PlayGoodbyeSong"></span></div>
+          <!--start modal-->
+          <div id="infantgoodbyesong" class="modalcontent">
+            <div class="data-modalcontent"  data-bind="html: BookGoodbye">
+            </div>
+          </div>
+          <!--end modal-->
+          <!--Lesson Complete-->
+          <div class="lesson-complete">
+            <div class="row">
+              <div data-bind="html: Complete">
+              </div>
+              <div class="col-xs-3">
+                <a class="bttn"><span data-bind="text: CompleteButton"></span></a>
+              </div>
+            </div>
+          </div>
+          <!--end Lesson Complete-->
+        </div>
+      </div>
+      <!--End Activity Procedure-->
+      
+      <!--Start Reference Materials-->
+      <div id="infanttab-3" class="tab-content-wrap tab-content-03 detail-wrap" data-bind="html: CurrentLesson.Section3_Content">
+        
+      </div>
+      <!--End Reference Materials-->   
+      
+      <!--End Music Play Center-->
+      <!--Start Moments-->
+      <div id="infanttab-4" class="tab-content-wrap tab-content-04" data-bind="html: CurrentLesson.Section4_Content">
+        
+      </div>
+      <!--End Moments-->
+    <!--end content-->
+    </div>
+    <div id="comingsoon" class="comingsoon" data-bind="html: ComingSoon">
+      
+    </div>
+  </div>
+  
+  <footer data-role="header" class="book-main-wrap-footer">
+    <div class="row">
+        <div class="col-xs-6">
+            <a data-role="button" class="bttn-tableofcontents" data-role="button" data-rel="drawer" href="#table-of-contents-theme-infant"><span class="glyphicon glyphicon-menu-hamburger"></span><span data-bind="text: TableOfContentsLabel"></span></a>
+            <a data-role="button" class="bttn-prev bttn-prev-lesson" data-bind="events: { click: PrevLessonClick }" data-transition="slide" ><span class="icon-left"></span> <span class="span-bold km-text" data-bind="text: Back"></span> <span data-bind="text: PrevLessonNumber" class="km-lessonnum"></span></a>
+        </div>
+        <div class="col-xs-6">
+             <a class="bttn-next bttn-next-lesson" data-bind="events: { click: NextLessonClick }" data-role="button"> <span class="span-bold km-text" data-bind="text: Next"></span> <span data-bind="text: NextLessonNumber" class="km-lessonnum"></span> <span class="icon-right"></span></a>
+            <a class="bttn-next bttn-glossary-lesson" href="views/mf-infantbookglossary.html"  data-role="button" data-transition="slide"> <span class="span-bold km-text" data-bind="text: NextGlossary"></span>  <span class="span-bold km-text" data-bind="text: GlossaryTitle"></span> <span class="icon-right"></span></a>
+        </div>	        
+    </div> 
+  </footer>
+<!--<div class="preloader-mf"><div class="preloader-mf-img"></div></div>-->
+<script src="js/infantbookdetails.js"></script>
+</div>
+
+<!--drawer navigation-->
+<div data-role="drawer" id="table-of-contents-theme-infant" class="bookdetails-drawer table-of-contents" style="width:250px"  data-swipe-to-open="false"  data-show="onShowDrawer" data-views='["lesson-details-infant"]'>
+    <div id="book-title" class="bookdetails-drawer-head">
+      <h1 data-bind="text: Book.Title"></h1>
+    </div>
+    <div data-role="scroller" style="height: 460px" id="scroller">
+      <ul id="list-themes" class="bookdetails-drawer-firstnav" data-bind="source: Themes" data-template="themes-template">
+      </ul>
+      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
+    </div>
+    <a data-click="hideDrawerID" data-role="button" class="bttn-hidedrawer"></a>       
+</div>
+<!--end drawer navigation-->
+
+
+<!-- Chapter Nav Template -->
+<script id="themes-template" type="text/x-kendo-template">
+  <li>
+    <a class="km-widget km-button js-subnav-link" data-role="button" data-bind="attr: { title: Title }, events: { click: SlideToggle }" data-transition="none" data-role="button" class="js-subnav-link"> <span data-bind="text: Title"></span><span class="glyphicon glyphicon-triangle-bottom"></span></a>
+    <ul>
+      #= RenderLessonsTemplate(data) #
+    </ul>
+  </li>
+</script>
+
+<!-- Lesson Nav Template -->
+<script id="lessons-template" type="text/x-kendo-template">
+    # $.each(data.Lessons, function (index, lesson) { 
+            # <li>
+              <a class="km-widget km-button" data-bind="events: { click: SelectLesson }" data-transition="none">
+                <input class="js-lessonnumber" type="text" value="${lesson.LessonNumber}" hidden/>
+                <input class="js-chapternumber" type="text" value="${lesson.ThemeNumber}" hidden/>
+                ${lesson.Title}
+              </a>
+            </li> #
+      }); 
+    #
+</script>
+<!---BOOK COVER END-->
+<div class="preloader-mf"><div class="preloader-mf-img"></div></div>
+<script src="js/bindings.js"></script>
+<!--<script src="js/index.js"></script>-->
+</body>
+</html>
