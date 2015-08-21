@@ -56,7 +56,7 @@ function beforeShowInfantthemes(e)
   {
   GetInfantBookById("7bbb7bb3-986e-67b9-8ff0-ff0000d15b77", "zh");
   GetLessonlessonContentLabels("zh");
-  GetTeacherAppLabels("zh");
+  GetTeacherAppLabels("en");
   currentChapterNumber = 1;
   currentLessonNumber = 1;
   isPostBack = true;

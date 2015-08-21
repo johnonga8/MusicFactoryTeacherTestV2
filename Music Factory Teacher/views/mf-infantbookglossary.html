@@ -41,8 +41,6 @@
       <h1 data-bind="text: Book.Title"></h1>
     </div>
     <div data-role="scroller" style="height: 460px" id="scroller">
-      <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToCover }"><span data-bind="text: CoverLabel"></span></a></div>
-      <div class="bookdetails-div bookdetails-preface"><a data-role="button" data-bind="events: { click: GoToPreface }"><span data-bind="text: PrefaceTitle"></span></a></div>
       <ul id="list-themes" class="bookdetails-drawer-firstnav" data-bind="source: Themes" data-template="themes-template">
       </ul>
       <div class="bookdetails-div bookdetails-cover"><a data-role="button" data-bind="events: { click: GoToGlossary }"><span data-bind="text: GlossaryTitle"></span></a></div>
