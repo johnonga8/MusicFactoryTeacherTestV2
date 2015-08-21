@@ -1,0 +1,41 @@
+{
+  "ProjectName": "Music Factory Teacher",
+  "ProjectGuid": "a8501708-70d1-4cf5-b177-dd3c2b9c7dd5",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.MusicFactoryTeacherPOCv2",
+  "DisplayName": "MF POC ",
+  "Author": "",
+  "Description": "MFPOC",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "True",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{6bde9cfc-08aa-4343-ba38-5fab4b8ecf73}",
+  "WP8ProductID": "{f32d21fe-bb3e-4180-9586-5f1900014fa5}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.MusicFactoryTeacher",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
