@@ -29,13 +29,6 @@
         FlexsliderMusic();
       } else if (tab_id === "infanttab-4"){
         $.fancybox.open([{ href: '#comingsoon',wrapCSS: "comingsoon-wrap" }]);
-        /*INPUT TEMP
-        $(".moments-publish").click(function(){
-          $(".moments-img input").toggle();
-          $(".moments-active").toggle();
-          $(".phototooltip").toggle();
-          $(".photoselected").toggle();
-        });**/
       } else {
         console.log('no slider');
       }
@@ -54,12 +47,12 @@ function beforeShowInfantthemes(e)
 {
   if (isPostBack == false)
   {
-  GetInfantBookById("7bbb7bb3-986e-67b9-8ff0-ff0000d15b77", "zh");
-  GetLessonlessonContentLabels("zh");
-  GetTeacherAppLabels("en");
-  currentChapterNumber = 1;
-  currentLessonNumber = 1;
-  isPostBack = true;
+    GetInfantBookById("7bbb7bb3-986e-67b9-8ff0-ff0000d15b77", "zh");
+    GetLessonlessonContentLabels("zh");
+    GetTeacherAppLabels("en");
+    currentChapterNumber = 1;
+    currentLessonNumber = 1;
+    isPostBack = true;
   }
   BindInfantLessonDetails(currentBook);
   $(".preloader-mf").show();
